@@ -1,0 +1,13 @@
+<div ng-controller="DisciplineListCtrl">
+
+	<div class="col-sm-6 col-md-4"
+		ng-repeat="discipline in disciplines">
+		<div class="thumbnail">
+			<img alt="..." src='{{discipline.img}}'/>
+			<div class="caption text-center">
+				<h3>{{ discipline.name }}</h3>
+				<p>{{ discipline.description }}</p>
+			</div>
+		</div>
+	</div>
+</div>

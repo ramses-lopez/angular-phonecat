@@ -3,12 +3,19 @@
 /* Controllers */
 
 var phonecatControllers = angular.module('phonecatControllers', []);
+console.log("> controller");
+
+phonecatControllers.controller('DisciplineListCtrl', ['$scope',
+  function($scope) {
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    $scope.disciplines = [{"name": "test", "description": "This is my desc", "img": "nope"}] ;
+}]);
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
   function($scope, Phone) {
     $scope.phones = Phone.query();
     $scope.orderProp = 'age';
-  }]);
+}]);
 
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
   function($scope, $routeParams, Phone) {
@@ -19,4 +26,4 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
     $scope.setImage = function(imageUrl) {
       $scope.mainImageUrl = imageUrl;
     };
-  }]);
+}]);
